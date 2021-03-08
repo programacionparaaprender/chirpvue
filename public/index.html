@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+		<!-- Required meta tags always come first -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Chirp Vue</title>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>	
+		<script src="javascripts/chirpVue.js"></script>
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<!-- Carga de fuentes de Font  Awesome -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+	
+		<!-- Carga de estilos css personalizados -->
+		<link rel="stylesheet" href="css/estilos.css">
+		<!-- jQuery first, then Tether, then Bootstrap JS. -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="stylesheets/style.css">
+	</head>
+	<body>
+		<div id='main' class="container">
+			<nav class="navbar-fluid navbar-default navbar-fixed-top">
+				<div class="container">
+					<p class="navbar-right navbar-text" v-show="!authenticated">
+						<a href="/chat">Chat</a></p>
+					<a class="navbar-brand" href="#"> Chirp! </a>
+					<p class="navbar-text"> Learn the MEAN stack by building this tiny app</p>
+					<p class="navbar-right navbar-text" v-show="!authenticated">
+						<router-link to="/login">Login</router-link> or
+						<router-link to="/register">Register</router-link>
+					</p>
+					<p class="navbar-right navbar-text" v-show="authenticated">
+						<a href="#" v-on:click="signout()">Logout</a>
+					</p>
+					<p class="navbar-right navbar-text" v-show="authenticated">
+						Signed in as {{current_user}}
+					</p>
+				</div>
+			</nav>
+			<div class="col-md-offset-2 col-md-8">
+				<router-view></router-view>
+			</div>
+		</div>
+	</body>
+</html>
