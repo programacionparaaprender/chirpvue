@@ -189,6 +189,7 @@ window.onload = function () {
         }
      });
 
+     //import Main from 'javascript/components/Main.vue';
     const Foo = { template: `<div>This is the component for the Foo route</div>` }
 //mode: 'history',
     const router = new VueRouter({
