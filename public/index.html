@@ -11,6 +11,7 @@
 		<title>Chirp Vue</title>
 		<script src="https://unpkg.com/vue/dist/vue.js"></script>
 		<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>	
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 		<script src="javascripts/chirpVue.js"></script>
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="css/bootstrap.css">
@@ -28,19 +29,17 @@
 		<div id='main' class="container">
 			<nav class="navbar-fluid navbar-default navbar-fixed-top">
 				<div class="container">
-					<p class="navbar-right navbar-text" v-show="!authenticated">
-						<a href="/chat">Chat</a></p>
 					<a class="navbar-brand" href="#"> Chirp! </a>
 					<p class="navbar-text"> Learn the MEAN stack by building this tiny app</p>
-					<p class="navbar-right navbar-text" v-show="!authenticated">
+					<p class="navbar-right navbar-text" v-show="authenticated=='false'">
 						<router-link to="/login">Login</router-link> or
 						<router-link to="/register">Register</router-link>
 					</p>
-					<p class="navbar-right navbar-text" v-show="authenticated">
+					<p class="navbar-right navbar-text" v-show="authenticated=='true'">
 						<a href="#" v-on:click="signout()">Logout</a>
 					</p>
-					<p class="navbar-right navbar-text" v-show="authenticated">
-						Signed in as {{current_user}}
+					<p class="navbar-right navbar-text" v-show="authenticated=='true'">
+						Signed in as {{$current_user}}
 					</p>
 				</div>
 			</nav>

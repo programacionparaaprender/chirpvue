@@ -27,3 +27,11 @@ https://riptutorial.com/vue-js/example/29805/basic-routing
 
 ### crear componentes vue
 https://www.tutorialspoint.com/vuejs/vuejs_components.htm#:~:text=Vue%20Components%20are%20one%20of,how%20components%20work%20with%20VueJS.
+
+
+### peticiones con fetch
+https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch
+
+
+### ejemplo de como usar axios
+https://medium.com/codingthesmartway-com-blog/getting-started-with-axios-166cb0035237
